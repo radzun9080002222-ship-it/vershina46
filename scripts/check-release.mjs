@@ -21,7 +21,7 @@ assert.ok(calc.includes('const [area, setArea] = useState(25)'), 'Calculator mus
 assert.ok(calc.includes('Math.max(rate * area, tariff.minPrice)'));
 const html = readFileSync('dist/index.html', 'utf8');
 const metrika = readFileSync('dist/metrika.js', 'utf8');
-assert.ok(metrika.includes('var id = 0;'), 'Wrong city counter');
+assert.ok(metrika.includes('var id = 113772576;'), 'Wrong city counter');
 for (const goal of ['click_phone','click_max','click_telegram','click_whatsapp','calc_interaction']) assert.ok(metrika.includes(goal), 'Missing goal event '+goal);
 assert.ok(html.includes('https://vershina46.ru/'));
 assert.ok(html.includes('Курске'));

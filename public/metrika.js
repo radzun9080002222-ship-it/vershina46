@@ -1,5 +1,5 @@
 (function () {
-  var id = 0; // Dedicated city counter not yet configured.
+  var id = 113772576; // Dedicated city counter, dima.radzun.
   if (!id) return;
   window.ym = window.ym || function () { (window.ym.a = window.ym.a || []).push(arguments); };
   window.ym.l = Date.now();
