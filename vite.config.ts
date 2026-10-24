@@ -4,7 +4,7 @@ import { vitePrerenderPlugin } from "vite-prerender-plugin";
 import { fileURLToPath } from "node:url";
 
 export default defineConfig({
-  // Относительная база работает и на GitHub Pages /vershina21/, и на собственном домене.
+  // Относительная база работает и на GitHub Pages /vershina46/, и на собственном домене.
   base: "./",
   plugins: [
     react(),

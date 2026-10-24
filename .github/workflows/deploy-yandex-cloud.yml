@@ -14,7 +14,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.YC_STATIC_SECRET_ACCESS_KEY }}
       AWS_DEFAULT_REGION: ru-central1
       AWS_EC2_METADATA_DISABLED: "true"
-      YC_BUCKET: vershina21.ru
+      YC_BUCKET: vershina46.ru
       YC_ENDPOINT: https://storage.yandexcloud.net
     steps:
       - uses: actions/checkout@v4

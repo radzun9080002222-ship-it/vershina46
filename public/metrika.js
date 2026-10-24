@@ -1,5 +1,5 @@
 (function () {
-  var id = 113741375; // Dedicated Cheboksary counter, dima.radzun.
+  var id = 0; // Dedicated city counter not yet configured.
   if (!id) return;
   window.ym = window.ym || function () { (window.ym.a = window.ym.a || []).push(arguments); };
   window.ym.l = Date.now();

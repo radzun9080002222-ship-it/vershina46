@@ -7,16 +7,16 @@ const prices = [
 
 export default function SeoCopy() {
   return (
-    <section aria-labelledby="cheboksary-cleaning-title" className="bg-mist py-16 md:py-20">
+    <section aria-labelledby="kursk-cleaning-title" className="bg-mist py-16 md:py-20">
       <div className="container-x grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
         <div>
-          <div className="kicker">Клининг в Чебоксарах</div>
-          <h2 id="cheboksary-cleaning-title" className="mt-3 text-3xl font-semibold leading-snug text-graphite md:text-4xl">
+          <div className="kicker">Клининг в Курске</div>
+          <h2 id="kursk-cleaning-title" className="mt-3 text-3xl font-semibold leading-snug text-graphite md:text-4xl">
             Уборка квартир и домов с понятной ценой
           </h2>
           <p className="mt-5 max-w-xl text-sm leading-7 text-ink/65">
             «Вершина» выполняет влажную и генеральную уборку, клининг после ремонта
-            и комплексную уборку под ключ в Чебоксарах. Мы привозим оборудование и
+            и комплексную уборку под ключ в Курске. Мы привозим оборудование и
             профессиональные средства, работаем по чек-листу и заранее фиксируем стоимость.
           </p>
           <p className="mt-3 max-w-xl text-sm leading-7 text-ink/65">
