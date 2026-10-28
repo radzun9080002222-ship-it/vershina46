@@ -24,6 +24,10 @@ assert.ok(page.includes('Свежо') && page.includes('в Курске'), 'City
 assert.ok(page.includes('noindex, follow'), 'Keep the experimental page out of search until approved');
 assert.ok(!/<form\b|odor\.js/.test(page), 'The simplified page must not restore the old brief');
 assert.equal((page.match(/<details>/g) || []).length, 2, 'Keep the FAQ compact');
+assert.ok(page.includes('id="floating-contact"'), 'Keep the floating contact panel');
+assert.ok(page.includes('./floating-contact.js?v=1'), 'The floating panel needs its scroll handler');
+const floating = readFileSync(resolve(root, 'udalenie-zapahov/floating-contact.js'), 'utf8');
+assert.ok(floating.includes('window.scrollY > 560'), 'Match the main page floating panel threshold');
 for (const match of page.matchAll(/(?:src|href)="([^"]+)"/g)) {
   const url = match[1].split(/[?#]/)[0];
   if (!url || /^(?:https?:|tel:|#)/.test(url)) continue;
