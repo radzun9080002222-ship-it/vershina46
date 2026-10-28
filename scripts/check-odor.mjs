@@ -8,8 +8,12 @@ const page = readFileSync(pagePath, 'utf8');
 const main = readFileSync(resolve(root, 'index.html'), 'utf8');
 const max = 'https://max.ru/u/f9LHodD0cOKZEJQUwiiemzvhecZLDTq6jxMPZ2SmNnd5JdJWltsbNUafP4o';
 for (const html of [page, main]) {
-  assert.ok(!/wa\.me|whatsapp/i.test(html), 'Visible WhatsApp links/text must not return');
+  assert.ok(html.includes('https://wa.me/79224539145'), 'Keep WhatsApp as a secondary contact');
+  assert.ok(html.includes('https://t.me/vershina_cleaning'), 'Keep Telegram as a secondary contact');
   assert.ok(html.includes(max), 'Dedicated MAX contact is missing');
+  for (const match of html.matchAll(/<a\b([^>]+)>([\s\S]*?)<\/a>/g)) {
+    if (/(?:Написать|Обсудить) в MAX/.test(match[2])) assert.ok(match[1].includes(max), 'Primary contact CTA must open MAX');
+  }
   for (const match of html.matchAll(/href="(#[^"]+)"/g)) {
     assert.ok(html.includes(`id="${match[1].slice(1)}"`), `Broken anchor ${match[1]}`);
   }
