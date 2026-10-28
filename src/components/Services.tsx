@@ -59,6 +59,14 @@ export default function Services() {
         <p className="mt-6 text-xs text-ink/45">
           Отдельно: химчистка мебели и ковров, офисы. Цена — по запросу.
         </p>
+        <a href="/udalenie-zapahov/" className="mt-8 flex flex-col gap-5 rounded-2xl bg-emerald-light px-6 py-7 transition hover:bg-emerald-light/70 sm:flex-row sm:items-center sm:justify-between md:px-8">
+          <span>
+            <span className="kicker">Отдельная услуга</span>
+            <span className="mt-2 block text-xl font-semibold text-graphite md:text-2xl">Удаление запахов</span>
+            <span className="mt-2 block text-sm leading-6 text-ink/60">Табак, животные, запахи после арендаторов.</span>
+          </span>
+          <span className="inline-flex shrink-0 items-center gap-4 text-sm font-semibold text-emerald">Подробнее <span aria-hidden="true">↗</span></span>
+        </a>
       </div>
     </section>
   );

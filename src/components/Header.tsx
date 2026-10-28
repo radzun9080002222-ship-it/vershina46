@@ -16,11 +16,11 @@ export default function Header() {
 
   return (
     <header className={`fixed inset-x-0 top-0 z-40 transition-all ${scrolled ? "bg-white/95 shadow-sm backdrop-blur" : "bg-transparent"}`}>
-      <div className="container-x flex h-[72px] items-center justify-between gap-6">
+      <div className="container-x flex h-[72px] items-center justify-between gap-4">
         <Logo />
-        <nav className="hidden items-center gap-6 xl:flex">
+        <nav className="hidden items-center gap-4 xl:flex">
           {NAV.map((n) => (
-            <a key={n.href} href={n.href} className="text-[13px] font-medium text-ink/70 transition hover:text-emerald">{n.label}</a>
+            <a key={n.href} href={n.href} className="whitespace-nowrap text-xs font-medium text-ink/70 transition hover:text-emerald">{n.label}</a>
           ))}
         </nav>
         <div className="hidden items-center gap-4 xl:flex">

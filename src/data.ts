@@ -1,13 +1,12 @@
 export const PHONE = "+7 (922) 453-91-45";
 export const PHONE_HREF = "tel:+79224539145";
-export const WHATSAPP = "https://wa.me/79224539145?text=Здравствуйте!%20Хочу%20рассчитать%20уборку";
-export const WA_LINK = "https://wa.me/79224539145";
 export const TG_LINK = "https://t.me/vershina_cleaning";
 export const MAX_LINK = "https://max.ru/u/f9LHodD0cOKZEJQUwiiemzvhecZLDTq6jxMPZ2SmNnd5JdJWltsbNUafP4o";
 
 export const NAV = [
   { href: "#calc", label: "Цена за 2 минуты" },
   { href: "#services", label: "Услуги" },
+  { href: "/udalenie-zapahov/", label: "Удаление запахов" },
   { href: "#cases", label: "Результаты" },
   { href: "#standard", label: "Стандарт" },
   { href: "#rent", label: "Для объектов" },
@@ -157,7 +156,7 @@ export const CASES = [
 ];
 
 export const PROCESS = [
-  { n: "1", title: "2 минуты", text: "Считаете цену на сайте или пишете в WhatsApp. Фиксируем стоимость сразу." },
+  { n: "1", title: "2 минуты", text: "Считаете цену на сайте или пишете в MAX. Фиксируем стоимость сразу." },
   { n: "2", title: "Точно в слот", text: "Команда в чёрной форме приезжает с оборудованием и химией. Опоздание — скидка." },
   { n: "3", title: "Работа по чек-листу", text: "Каждый пункт проверяется старшим смены до того, как вас позовут принимать." },
   { n: "4", title: "Приёмка и 48ч гарантии", text: "Принимаете по списку. Что-то не так в течение 2 суток — переделаем бесплатно." },
