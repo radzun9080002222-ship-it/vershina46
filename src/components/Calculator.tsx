@@ -6,7 +6,7 @@ const fmt = (n: number) => n.toLocaleString("ru-RU");
 
 export default function Calculator() {
   const [area, setArea] = useState(25);
-  const [tariffId, setTariffId] = useState("general");
+  const [tariffId, setTariffId] = useState("regular");
   const [rateOptionId, setRateOptionId] = useState("standard");
   const tariff = TARIFFS.find((t) => t.id === tariffId)!;
   const rateOption = tariff.rateOptions?.find((option) => option.id === rateOptionId);
