@@ -1,5 +1,7 @@
 name: Deploy to Yandex Object Storage
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
@@ -29,13 +31,15 @@ jobs:
       - run: pnpm run build
       - name: Upload site
         run: aws s3 sync dist/ "s3://${YC_BUCKET}" --delete --endpoint-url "$YC_ENDPOINT" --only-show-errors
-      - name: Disable browser caching for entry and service files
+      - name: Refresh HTML and service files without browser caching
         run: |
-          for file in index.html privacy.html robots.txt sitemap.xml site.webmanifest; do
-            if [ -f "dist/$file" ]; then
-              aws s3 cp "dist/$file" "s3://${YC_BUCKET}/$file" \
-                --cache-control "no-cache, no-store, must-revalidate" \
-                --content-type "$(file --brief --mime-type "dist/$file")" \
-                --endpoint-url "$YC_ENDPOINT" --only-show-errors
-            fi
+          find dist -type f \( -name '*.html' -o -name 'metrika.js' -o -name 'robots.txt' -o -name 'sitemap.xml' -o -name '*.webmanifest' \) -print0 | while IFS= read -r -d '' file; do
+            case "$file" in
+              *.html) type='text/html; charset=utf-8' ;;
+              *.js) type='application/javascript; charset=utf-8' ;;
+              *.xml) type='application/xml; charset=utf-8' ;;
+              *.webmanifest) type='application/manifest+json' ;;
+              *) type='text/plain; charset=utf-8' ;;
+            esac
+            aws s3 cp "$file" "s3://${YC_BUCKET}/${file#dist/}" --cache-control 'no-cache, no-store, must-revalidate' --content-type "$type" --endpoint-url "$YC_ENDPOINT" --only-show-errors
           done
